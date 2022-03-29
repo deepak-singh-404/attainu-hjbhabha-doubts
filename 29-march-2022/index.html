@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip-Calculator</title>
+</head>
+
+<body>
+    <div id="heading">
+        <lable id="tipword"> Tip</lable>
+        <lable id="cal">Calculator</lable>
+    </div>
+    <div id="container">
+        <form action="#">
+            <lable id="lb">Bill Amount:</lable><input id="amt" required><br>
+            <lable id="lb">Tip Parcentage:</lable><input id="per" required><br>
+            <lable id="lb">Tip Amount:</lable><input id="tip" disabled><br>
+            <lable id="lb">Total:</lable><input id="total" disabled><br>
+            <div id="btn-div">
+                <button id="submit-button" onclick="calculate()">calculate</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function calculate() {
+            let amt = Number(document.getElementById('amt').value)
+            let per = Number(document.getElementById('per').value)
+            if (Number.isInteger(amt) & Number.isInteger(per)) {
+                let tip = amt * (per / 100)
+                let total = amt + tip
+                document.getElementById('tip').value = '$' + tip
+                document.getElementById('total').value = '$' + total
+                console.log(tip)
+                console.log(total)
+            }
+            //console.log(tip)
+            else {
+                alert("plz enter valid amount")
+            }
+        }
+
+        //Button
+        const button = document.getElementById('submit-button')
+        button.addEventListener('click', calculate)
+    </script>
+</body>
+
+</html>
