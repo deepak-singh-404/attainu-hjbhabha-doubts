@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="signup">
+        <h1>Sign Up</h1>
+        <div class="field">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your fullname" />
+            <small></small>
+        </div>
+        <div class="field">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email address" />
+            <small></small>
+        </div>
+        <button type="submit">Subscribe</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('signup');
+        form.addEventListener('submit', (event) => {
+            // handle the form data
+            event.preventDefault();
+            console.log("name", form.elements['name'].value)
+            console.log("email", form.elements['name'].value)
+            console.log("THANK YOU")
+        });
+    </script>
+
+
+
+</body>
+
+</html>
